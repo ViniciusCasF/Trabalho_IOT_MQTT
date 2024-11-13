@@ -41,15 +41,15 @@ void connectAWS() {
     Serial.print(".");
   }
 
-  // Configure WiFiClientSecure to use the AWS IoT device credentials
+ 
   net.setCACert(AWS_CERT_CA);
   net.setCertificate(AWS_CERT_CRT);
   net.setPrivateKey(AWS_CERT_PRIVATE);
 
-  // Connect to the MQTT broker on the AWS endpoint we defined earlier
+ 
   client.setServer(AWS_IOT_ENDPOINT, 8883);
 
-  // Create a message handler
+
   client.setCallback(messageHandler);
 
   Serial.println("Conectando no Broker");
